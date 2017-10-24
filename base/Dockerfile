@@ -10,8 +10,9 @@ ONBUILD ENV NODE_VERSION ${NODE_VERSION:-4.8.4}
 
 RUN bash $METEORD_DIR/lib/install_base.sh
 RUN bash $METEORD_DIR/lib/install_node.sh
+RUN bash $METEORD_DIR/lib/install_meteor.sh
 RUN bash $METEORD_DIR/lib/install_phantomjs.sh
 RUN bash $METEORD_DIR/lib/cleanup.sh
 
 EXPOSE 80
-ENTRYPOINT bash $METEORD_DIR/run_app.sh
+ENTRYPOINT bash $METEORD_DIR/run_app_meteor.sh
